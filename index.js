@@ -19,10 +19,14 @@ function fetchMusicComplet(music) {
   //   console.log(music.url);
   //   let nameMusic = music.name;
   //   console.log(music.name);
+
   objMusicFull.id = music.id;
   objMusicFull.name = music.name;
   objMusicFull.pic = music.thumbnail;
   objMusicFull.author = music.author;
+  objMusicFull.youtube = music.youtube;
+  objMusicFull.style = music.style;
+  objMusicFull.annee = music.annee;
   //   console.log(music.author);
 
   allMusicArr.push(objMusicFull);
@@ -46,6 +50,17 @@ function createCard(arr) {
     txtCarteNom.innerText = arr[i].name;
     const txtCarteAuteur = document.createElement("h5");
     txtCarteAuteur.innerText = arr[i].author;
+
+    const txtCarteAnnee = document.createElement("p");
+    txtCarteAnnee.innerText = arr[i].annee;
+
+    const txtCarteStyle = document.createElement("p");
+    txtCarteStyle.innerText = arr[i].style;
+
+    const youtube = document.createElement("a");
+    youtube.href = arr[i].youtube;
+    youtube.innerHTML = "Voir sur youtube";
+
     const idCarte = document.createElement("p");
     idCarte.innerText = `id: ${arr[i].id}`;
     const imgCarte = document.createElement("img");
@@ -55,7 +70,10 @@ function createCard(arr) {
     carte.appendChild(imgCarte);
     carte.appendChild(txtCarteNom);
     carte.appendChild(txtCarteAuteur);
-    carte.appendChild(idCarte);
+    // carte.appendChild(idCarte);
+    carte.appendChild(txtCarteAnnee);
+    carte.appendChild(youtube);
+    carte.appendChild(txtCarteStyle);
 
     //Ajout de carte dans ul.listePoke
     musicList.appendChild(carte);

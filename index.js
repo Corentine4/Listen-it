@@ -30,13 +30,13 @@ function fetchMusicComplet(music) {
   //   console.log(music.author);
 
   allMusicArr.push(objMusicFull);
-  if (allMusicArr.length == 2) {
+  if (allMusicArr.length == 3) {
     console.log(allMusicArr);
     tableauFin = allMusicArr
       .sort((a, b) => {
         return a.id - b.id;
       })
-      .slice(0, 2);
+      .slice(0, 3);
     // console.log(tableauFin);
     createCard(tableauFin);
   }

@@ -26,7 +26,7 @@ function fetchMusicComplet(music) {
   objMusicFull.author = music.author;
   objMusicFull.youtube = music.youtube;
   objMusicFull.style = music.style;
-  objMusicFull.annee = music.annee;
+  objMusicFull.realeaseDate = music.realeaseDate;
   //   console.log(music.author);
 
   allMusicArr.push(objMusicFull);
@@ -47,30 +47,37 @@ function createCard(arr) {
     const carte = document.createElement("li");
     const txtCarteNom = document.createElement("h5");
     txtCarteNom.innerText = arr[i].name;
+    txtCarteNom.classList.add("nom");
+
     const txtCarteAuteur = document.createElement("h5");
     txtCarteAuteur.innerText = arr[i].author;
+    txtCarteAuteur.classList.add("author");
 
-    const txtCarteAnnee = document.createElement("p");
-    txtCarteAnnee.innerText = arr[i].annee;
+    const txtCarterealeaseDate = document.createElement("p");
+    txtCarterealeaseDate.innerText = arr[i].realeaseDate;
+    txtCarterealeaseDate.classList.add("realeaseDate");
 
     const txtCarteStyle = document.createElement("p");
     txtCarteStyle.innerText = arr[i].style;
+    txtCarteStyle.classList.add("style");
 
     const youtube = document.createElement("a");
     youtube.href = arr[i].youtube;
     youtube.innerHTML = "Voir sur youtube";
+    youtube.classList.add("youtube");
 
-    const idCarte = document.createElement("p");
-    idCarte.innerText = `id: ${arr[i].id}`;
+    // const idCarte = document.createElement("p");
+    // idCarte.innerText = `id: ${arr[i].id}`;
     const imgCarte = document.createElement("img");
     imgCarte.src = arr[i].pic;
+    imgCarte.classList.add("imgCarte");
 
     // ajoute enfants à li
     carte.appendChild(imgCarte);
     carte.appendChild(txtCarteNom);
     carte.appendChild(txtCarteAuteur);
     // carte.appendChild(idCarte);
-    carte.appendChild(txtCarteAnnee);
+    carte.appendChild(txtCarterealeaseDate);
     carte.appendChild(youtube);
     carte.appendChild(txtCarteStyle);
 

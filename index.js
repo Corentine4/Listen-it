@@ -26,7 +26,7 @@ function fetchMusicComplet(music) {
   objMusicFull.author = music.author;
   objMusicFull.youtube = music.youtube;
   objMusicFull.style = music.style;
-  objMusicFull.realeaseDate = music.realeaseDate;
+  objMusicFull.releaseDate = music.releaseDate;
   //   console.log(music.author);
 
   allMusicArr.push(objMusicFull);
@@ -45,17 +45,17 @@ function createCard(arr) {
   for (let i = 0; i < arr.length; i++) {
     console.log(arr[i]);
     const carte = document.createElement("li");
-    const txtCarteNom = document.createElement("h5");
-    txtCarteNom.innerText = arr[i].name;
-    txtCarteNom.classList.add("nom");
+    const txtCarteName = document.createElement("h5");
+    txtCarteName.innerText = arr[i].name;
+    txtCarteName.classList.add("name");
 
-    const txtCarteAuteur = document.createElement("h5");
-    txtCarteAuteur.innerText = arr[i].author;
-    txtCarteAuteur.classList.add("author");
+    const txtCarteAuthor = document.createElement("h5");
+    txtCarteAuthor.innerText = arr[i].author;
+    txtCarteAuthor.classList.add("author");
 
-    const txtCarterealeaseDate = document.createElement("p");
-    txtCarterealeaseDate.innerText = arr[i].realeaseDate;
-    txtCarterealeaseDate.classList.add("realeaseDate");
+    const txtCarteReleaseDate = document.createElement("p");
+    txtCarteReleaseDate.innerText = arr[i].releaseDate;
+    txtCarteReleaseDate.classList.add("releaseDate");
 
     const txtCarteStyle = document.createElement("p");
     txtCarteStyle.innerText = arr[i].style;
@@ -68,16 +68,16 @@ function createCard(arr) {
 
     // const idCarte = document.createElement("p");
     // idCarte.innerText = `id: ${arr[i].id}`;
-    const imgCarte = document.createElement("img");
-    imgCarte.src = arr[i].pic;
-    imgCarte.classList.add("imgCarte");
+    const thumbnail = document.createElement("img");
+    thumbnail.src = arr[i].pic;
+    thumbnail.classList.add("thumbnail");
 
     // ajoute enfants à li
-    carte.appendChild(imgCarte);
-    carte.appendChild(txtCarteNom);
-    carte.appendChild(txtCarteAuteur);
+    carte.appendChild(thumbnail);
+    carte.appendChild(txtCarteName);
+    carte.appendChild(txtCarteAuthor);
     // carte.appendChild(idCarte);
-    carte.appendChild(txtCarterealeaseDate);
+    carte.appendChild(txtCarteReleaseDate);
     carte.appendChild(youtube);
     carte.appendChild(txtCarteStyle);
 

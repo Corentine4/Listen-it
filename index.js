@@ -1,9 +1,14 @@
+const fs = require("fs");
+require("dotenv").config();
+const apiKey = process.env.API_LINK;
+
 let allMusicArr = [];
 let tableauFin = [];
+
 const musicList = document.querySelector(".music-list");
 
 function fetchMusic() {
-  fetch("https://polar-earth-15538.herokuapp.com/Music")
+  fetch(apiKey)
     .then((response) => response.json())
     .then((allMusics) => {
       allMusics.forEach((music) => {
@@ -31,7 +36,7 @@ function fetchMusicComplet(music) {
 
   allMusicArr.push(objMusicFull);
   if (allMusicArr.length == 6) {
-    console.log(allMusicArr);
+    // console.log(allMusicArr);
     tableauFin = allMusicArr.sort((a, b) => {
       return a.id - b.id;
     });
@@ -43,7 +48,7 @@ function fetchMusicComplet(music) {
 //Ajout du pokedex
 function createCard(arr) {
   for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
+    // console.log(arr[i]);
     const carte = document.createElement("li");
     const txtCarteName = document.createElement("h5");
     txtCarteName.innerText = arr[i].name;

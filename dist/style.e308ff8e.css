@@ -1,0 +1,12 @@
+img {
+  height: 250px;
+  width: 250px;
+}
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */

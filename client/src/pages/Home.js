@@ -1,15 +1,12 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
-
-// Import the logo
-import Logo from '../components/Logo';
+import Musics from '../components/Musics';
 
 const Home = () => {
     return (
         <div className="home">
-            <Logo/>
             <Navigation/>
-            <h1>Accueil</h1>
+            <Musics/>
         </div>
     )
 }

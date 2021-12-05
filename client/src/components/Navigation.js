@@ -10,7 +10,7 @@ class Navigation extends Component {
             <div className="Navigation">
                 {/* Adding the navigation to the home page ("/") */}
                 {/* activeClassName = particular CSS class */}
-                <NavLink exact to="/" activeClassName="navigation-active">
+                <NavLink exact to="/" activeclassName="navigation-active">
                         <Logo/> Accueil
                 </NavLink>
             </div>

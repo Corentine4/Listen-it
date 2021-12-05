@@ -1,27 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useState } from 'react';
+import Card from './Card';
 
 const Musics = () => {
 
-    // Make a hook
-    const [data, setData] = useState([ ]);
+    // Stock into the State
+    const [data, setData] = useState( [] );
 
+        // Make a hook
         useEffect(() => {
 
             // Get the api by the link
-            axios.get('https://polar-earth-15538.herokuapp.com/Music')
+            axios
+            .get('https://polar-earth-15538.herokuapp.com/Music')
             
             // then = the promise
             .then((res) => setData(res.data));
 
-            console.log(data);
+        }, [ ]);
+        // [] Dependency array -> Don't have endless requests
 
-        }, [] );
-        // Empty callback [] -> Don't have endless requests
-
-
-    return <div></div>;
+    return(
+        <div className="musics">
+            <ul>
+                {data.map((Musics) => (
+                    <Card Musics={Musics} key={Musics.name}/> // Props -> give datas
+                ))}
+            </ul>
+        </div>
+    );
     
 };
 

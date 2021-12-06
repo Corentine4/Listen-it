@@ -14,6 +14,9 @@ const Card = (props) => {
                     <li>{Musics.name}</li> {/* Tile of the music */}
                     <li>{Musics.author}</li>
                     <li>{Musics.releaseDate}</li>
+                    <li>
+                        <a href={Musics.youtube} alt="Lien vers Youtube">Ecouter</a>
+                    </li>
                 </ul>
             </div>
         </li>

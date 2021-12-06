@@ -6,13 +6,19 @@ $Roboto: 'Roboto', sans-serif;
 // Colors
 $darkgrey: #3B3B3B;
 $lightyellow: #f4bd44;
-$darkblue: #202249;
+$middleblue: #202249;
+$darkblue: #1d243e;
+$white: #ddd;
 
 *{
     margin: 0;
     padding: 0;
     color: $darkgrey;
     font-family: $Roboto;
+    font-weight: normal;
+    // Colors
+    color: $white;
+    background-color: $darkblue;
 }
 
 // Settings for links

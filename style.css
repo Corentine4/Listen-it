@@ -1,9 +1,0 @@
-img {
-  height: 250px;
-  width: 250px;
-}
-ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-}

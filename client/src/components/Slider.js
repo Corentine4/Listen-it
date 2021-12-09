@@ -3,6 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import Card from "./Card";
 import axios from "axios";
+// import styles from "../styles/style.css";
 
 function Slider() {
   const [data, setData] = useState([]);

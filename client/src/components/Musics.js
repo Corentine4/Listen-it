@@ -1,35 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Card from './Card';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Card from "./Card";
 
-const Musics = () => {
+require("dotenv").config({ path: "../../.env" });
 
-    // Stock into the State
-    const [data, setData] = useState( [] );
+function Musics() {
+  // Stock into the State
+  const [data, setData] = useState([]);
+  const musics = data;
 
-        // Make a hook
-        useEffect(() => {
+  // Make a hook
+  useEffect(() => {
+    const apiKey = process.env.REACT_APP_API_LINK;
 
-            // Get the api by the link
-            axios
-            .get('https://polar-earth-15538.herokuapp.com/Music')
-            
-            // then = the promise
-            .then((res) => setData(res.data));
+    // Get the api by the link
+    axios
+      .get(apiKey)
 
-        }, [ ]);
-        // [] Dependency array -> Don't have endless requests
+      // then = the promise
+      .then((res) => setData(res.data));
+  }, []);
+  // [] Dependency array -> Don't have endless requests
 
-    return(
-        <div className="musics">
-            <ul>
-                {data.map((Musics) => (
-                    <Card Musics={Musics} key={Musics.name}/> // Props -> give datas
-                ))}
-            </ul>
-        </div>
-    );
-    
-};
+  ///   //   return (
+  //     <div className="musics">
+  //       <ul>
+  //         {data.map((Musics) => (
+  //           <Card Musics={Musics} key={Musics.name} /> // Props -> give datas
+  //         ))}
+  //       </ul>
+  //     </div>
+  //   );
 
+  return (
+    <>
+      {musics.map((music) => (
+        <Card music={music} key={music.name} />
+      ))}
+    </>
+  );
+}
 export default Musics;

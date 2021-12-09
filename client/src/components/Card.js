@@ -1,26 +1,27 @@
-import React from 'react';
+import React from "react";
 
 const Card = (props) => {
+  const { music } = props;
+  // Simplification of :
+  // Const musics = props.Musics
 
-    const {Musics} = props;
-    // Simplification of :
-    // Const Musics = props.Musics
-
-    return (
-        <li className="card">
-            <img src={Musics.thumbnail} alt="Pochette du CD"/>
-            <div className="data-container">
-                <ul>
-                    <li>{Musics.name}</li> {/* Tile of the music */}
-                    <li>{Musics.author}</li>
-                    <li>{Musics.releaseDate}</li>
-                    <li>
-                        <a href={Musics.youtube} alt="Lien vers Youtube">Ecouter</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-    );
+  return (
+    <div className="card">
+      <img src={music.thumbnail} alt="Pochette du CD" />
+      <div className="data-container">
+        <ul>
+          <li>{music.name}</li> {/* Tile of the music */}
+          <li>{music.author}</li>
+          <li>{music.releaseDate}</li>
+          <li>
+            <a href={music.youtube} alt="Lien vers Youtube">
+              Ecouter
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
 };
 
 export default Card;
